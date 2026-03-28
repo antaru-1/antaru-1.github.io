@@ -51,15 +51,16 @@ showPage('home');
 // ── 7. Terminal animation (runs ONCE on load) ────────────────────
 // Edit the lines array to change what the terminal types.
 const TERMINAL_LINES = [
-  { text: 'abdeljalil@portfolio:~$ whoami',                         cls: 't-prompt',  pause: 500 },
-  { text: 'abdeljalil_medjadi',                                     cls: 't-out',     pause: 150 },
-  { text: '',                                                        cls: 'blank',     pause: 80  },
-  { text: 'abdeljalil@portfolio:~$ skills_scan',                    cls: 't-prompt',  pause: 500 },
-  { text: '# Scanning core competencies...',                        cls: 't-comment', pause: 100 },
-  { text: '> [Computer Architecture]  ->  MIPS, ALU, LogicSim',     cls: 't-key',     pause: 60  },
-  { text: '> [Cybersecurity]          ->  Fundamentals, Network Defense', cls: 't-key', pause: 60 },
-  { text: '> [Systems]                ->  C, Python, C++, Bash',    cls: 't-key',     pause: 60  },
-  { text: '',                                                        cls: 'blank',     pause: 80  },
+  { text: '$ whoami',                 type: 'cmd'    },
+  { text: 'abdeljalil.medjadi',       type: 'out'    },
+  { text: '$ cat interests.txt',      type: 'cmd'    },
+  { text: '> Computer Architecture',  type: 'out'    },
+  { text: '> Cybersecurity',          type: 'out'    },
+  { text: '> Systems Programming',    type: 'out'    },
+  { text: '> Networking & Protocols', type: 'out'    },
+  { text: '$ echo $GOAL',             type: 'cmd'    },
+  { text: 'Build. Learn. Solve.',     type: 'accent' },
+  { text: '$ _',                      type: 'cmd'    },
 ];
 
 const termEl   = document.getElementById('terminal-output');
