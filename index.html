@@ -1,42 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>abdeljalil medjadi | Computer science Portfolio</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 20px; background: #f4f4f9; }
-        header { text-align: center; padding: 50px 0; background: #2c3e50; color: white; border-radius: 10px; }
-        .project-card { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 5px solid #3498db; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; }
-        .tag { background: #3498db; color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.8em; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdeljalil Medjadi — Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header>
-        <h1>[abdeljalil medjadi]</h1>
-        <p>Computer Science & Engineering Student |</p>
-    </header>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        
-        <div class="project-card">
-            <h3>Computer Architecture Labs</h3>
-            <span class="tag">MIPS</span> <span class="tag">Logisim</span>
-            <p>Designed an 8-bit ALU, 4-bit Counter, and implemented Fibonacci algorithms in Assembly.</p>
-            <a href="https://github.com/antaru-1/Computer-Architecture-Labs">View Project</a>
+  <!-- ======================================================
+    NAVBAR
+  ====================================================== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+
+      <button onclick="showPage('home')" class="logo">
+        <span class="bracket">[</span>AM<span class="bracket">]</span>
+      </button>
+
+      <ul class="nav-links">
+        <li><button onclick="showPage('home')"     class="nav-link" data-page="home">About</button></li>
+        <li><button onclick="showPage('projects')" class="nav-link" data-page="projects">Projects</button></li>
+        <li><button onclick="showPage('certs')"    class="nav-link" data-page="certs">Certifications</button></li>
+        <li><button onclick="showPage('contact')"  class="nav-link nav-cta" data-page="contact">Contact</button></li>
+      </ul>
+
+      <button id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <button onclick="showPage('home');toggleMenu()"     class="nav-link" data-page="home">About</button>
+      <button onclick="showPage('projects');toggleMenu()" class="nav-link" data-page="projects">Projects</button>
+      <button onclick="showPage('certs');toggleMenu()"    class="nav-link" data-page="certs">Certifications</button>
+      <button onclick="showPage('contact');toggleMenu()"  class="nav-link" data-page="contact">Contact</button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ======================================================
+      PAGE: ABOUT
+    ====================================================== -->
+    <section id="page-home" class="page-section">
+
+      <!-- Hero grid -->
+      <div class="hero-grid">
+
+        <!-- Left: text -->
+        <div class="hero-text">
+          <p class="eyebrow">Computer Engineering &amp; Science Student</p>
+
+          <h1 class="hero-name">
+            <span class="name-white">Abdeljalil</span>
+            <span class="name-teal">Medjadi</span>
+          </h1>
+
+          <p class="hero-bio">
+            I explore the digital world with an open mind — from Computer Architecture
+            to Cybersecurity. Building a versatile technical foundation through continuous
+            learning and a passion for solving complex problems.
+          </p>
+
+          <div class="cta-row">
+            <button onclick="showPage('projects')" class="btn-primary">View Projects</button>
+            <button onclick="showPage('contact')"  class="btn-ghost">Get in Touch</button>
+          </div>
         </div>
 
-        <div class="project-card">
-            <h3>Data Structures in C</h3>
-            <span class="tag">C Language</span> <span class="tag">Algorithms</span>
-            <p>Implementation of sorting algorithms and linked lists with focus on memory efficiency.</p>
-            <a href="#">Coming Soon...</a>
+        <!-- Right: terminal -->
+        <div class="hero-terminal">
+          <div class="terminal-box">
+            <div class="terminal-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">abdeljalil@portfolio:~</span>
+            </div>
+            <div class="terminal-body" id="terminal-output"></div>
+          </div>
         </div>
+
+      </div><!-- /hero-grid -->
+
+      <!-- About + Interests -->
+      <div class="about-grid">
+
+        <div class="about-bio">
+          <p class="section-label">About Me</p>
+          <p class="bio-text">
+            I am a Computer Engineering &amp; Science student with a deep curiosity for
+            how technology works from the ground up. Rather than limiting myself to one
+            path, I explore the digital world with an open mind — from the intricate logic
+            of Computer Architecture to the defensive layers of Cybersecurity.
+          </p>
+          <p class="bio-text muted">
+            My goal is to build a versatile technical foundation, driven by a commitment
+            to continuous learning and a passion for solving complex problems across all
+            domains of computing.
+          </p>
+        </div>
+
+        <div class="about-interests">
+          <p class="section-label">Interests</p>
+          <ul class="interests-list">
+            <!-- Each interest links to the projects page and filters by category -->
+            <li><a href="#" onclick="showPage('projects');filterCards('systems');return false;" class="interest-tag">Computer Architecture</a></li>
+            <li><a href="#" onclick="showPage('projects');filterCards('security');return false;" class="interest-tag">Cybersecurity</a></li>
+            <li><a href="#" onclick="showPage('projects');filterCards('systems');return false;" class="interest-tag">Systems Programming</a></li>
+            <li><a href="#" onclick="showPage('projects');filterCards('security');return false;" class="interest-tag">Networking</a></li>
+            <li><a href="#" onclick="showPage('projects');filterCards('systems');return false;" class="interest-tag">Algorithms</a></li>
+            <li><a href="#" onclick="showPage('projects');filterCards('all');return false;"     class="interest-tag">Open Source</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /about-grid -->
     </section>
 
-    <footer style="text-align: center; margin-top: 50px;">
-        <p>© 2026 | Built with Passion on GitHub Pages</p>
-    </footer>
+    <!-- ======================================================
+      PAGE: PROJECTS
+    ====================================================== -->
+    <section id="page-projects" class="page-section hidden">
+
+      <div class="page-header">
+        <div>
+          <p class="section-label">Work</p>
+          <h2 class="page-title">Projects</h2>
+        </div>
+        <div class="filter-row">
+          <button class="filter-chip active" data-cat="all"      onclick="filterCards('all')">All</button>
+          <button class="filter-chip"        data-cat="systems"  onclick="filterCards('systems')">Systems</button>
+          <button class="filter-chip"        data-cat="security" onclick="filterCards('security')">Security</button>
+          <button class="filter-chip"        data-cat="web"      onclick="filterCards('web')">Web</button>
+        </div>
+      </div>
+
+      <div id="projects-grid" class="cards-grid">
+
+        <!-- PROJECT CARD — copy this block to add more -->
+        <article class="card" data-category="systems">
+          <div class="card-thumb">
+            <i data-feather="cpu"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="badge">Systems</span>
+              <a href="#" class="icon-link"><i data-feather="github"></i></a>
+              <a href="#" class="icon-link"><i data-feather="external-link"></i></a>
+            </div>
+            <h3 class="card-title">Project Title One</h3>
+            <p class="card-desc">A brief description of what this project does and the technologies used.</p>
+            <div class="tag-row">
+              <span class="tech-tag">C</span>
+              <span class="tech-tag">Assembly</span>
+              <span class="tech-tag">Linux</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="security">
+          <div class="card-thumb">
+            <i data-feather="shield"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="badge">Security</span>
+              <a href="#" class="icon-link"><i data-feather="github"></i></a>
+              <a href="#" class="icon-link"><i data-feather="external-link"></i></a>
+            </div>
+            <h3 class="card-title">Project Title Two</h3>
+            <p class="card-desc">A brief description of what this project does and the technologies used.</p>
+            <div class="tag-row">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Wireshark</span>
+              <span class="tech-tag">Bash</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="web">
+          <div class="card-thumb">
+            <i data-feather="code"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="badge">Web</span>
+              <a href="#" class="icon-link"><i data-feather="github"></i></a>
+              <a href="#" class="icon-link"><i data-feather="external-link"></i></a>
+            </div>
+            <h3 class="card-title">Project Title Three</h3>
+            <p class="card-desc">A brief description of what this project does and the technologies used.</p>
+            <div class="tag-row">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Tailwind</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="systems">
+          <div class="card-thumb">
+            <i data-feather="terminal"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="badge">Systems</span>
+              <a href="#" class="icon-link"><i data-feather="github"></i></a>
+              <a href="#" class="icon-link"><i data-feather="external-link"></i></a>
+            </div>
+            <h3 class="card-title">Project Title Four</h3>
+            <p class="card-desc">A brief description of what this project does and the technologies used.</p>
+            <div class="tag-row">
+              <span class="tech-tag">Rust</span>
+              <span class="tech-tag">OS Concepts</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="security">
+          <div class="card-thumb">
+            <i data-feather="lock"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="badge">Security</span>
+              <a href="#" class="icon-link"><i data-feather="github"></i></a>
+              <a href="#" class="icon-link"><i data-feather="external-link"></i></a>
+            </div>
+            <h3 class="card-title">Project Title Five</h3>
+            <p class="card-desc">A brief description of what this project does and the technologies used.</p>
+            <div class="tag-row">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Cryptography</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="web">
+          <div class="card-thumb">
+            <i data-feather="layers"></i>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="badge">Web</span>
+              <a href="#" class="icon-link"><i data-feather="github"></i></a>
+              <a href="#" class="icon-link"><i data-feather="external-link"></i></a>
+            </div>
+            <h3 class="card-title">Project Title Six</h3>
+            <p class="card-desc">A brief description of what this project does and the technologies used.</p>
+            <div class="tag-row">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================
+      PAGE: CERTIFICATIONS
+    ====================================================== -->
+    <section id="page-certs" class="page-section hidden">
+
+      <div class="page-header">
+        <div>
+          <p class="section-label">Credentials</p>
+          <h2 class="page-title">Certifications</h2>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- CERT CARD — copy this block to add more -->
+        <article class="cert-card">
+          <div class="cert-icon"><i data-feather="award"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Certification Name</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <div class="cert-footer">
+              <span class="cert-date">Issued: Mon YYYY</span>
+              <a href="#" class="cert-verify">Verify <i data-feather="external-link"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-icon"><i data-feather="shield"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Certification Name</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <div class="cert-footer">
+              <span class="cert-date">Issued: Mon YYYY</span>
+              <a href="#" class="cert-verify">Verify <i data-feather="external-link"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-icon"><i data-feather="cpu"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Certification Name</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <div class="cert-footer">
+              <span class="cert-date">Issued: Mon YYYY</span>
+              <a href="#" class="cert-verify">Verify <i data-feather="external-link"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-icon"><i data-feather="globe"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Certification Name</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <div class="cert-footer">
+              <span class="cert-date">Issued: Mon YYYY</span>
+              <a href="#" class="cert-verify">Verify <i data-feather="external-link"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-icon"><i data-feather="code"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Certification Name</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <div class="cert-footer">
+              <span class="cert-date">Issued: Mon YYYY</span>
+              <a href="#" class="cert-verify">Verify <i data-feather="external-link"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-icon"><i data-feather="server"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Certification Name</h3>
+            <p class="cert-org">Issuing Organization</p>
+            <div class="cert-footer">
+              <span class="cert-date">Issued: Mon YYYY</span>
+              <a href="#" class="cert-verify">Verify <i data-feather="external-link"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================
+      PAGE: CONTACT
+    ====================================================== -->
+    <section id="page-contact" class="page-section hidden">
+
+      <div class="page-header">
+        <div>
+          <p class="section-label">Say Hello</p>
+          <h2 class="page-title">Contact</h2>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p class="contact-intro">
+            I'm always open to discussing new projects, research collaborations,
+            internship opportunities, or just a good conversation about technology.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <i data-feather="mail"></i>
+              <!-- UPDATE: your real email -->
+              <a href="mailto:your@email.com">your@email.com</a>
+            </li>
+            <li>
+              <i data-feather="map-pin"></i>
+              <span>Algeria</span>
+            </li>
+            <li>
+              <i data-feather="github"></i>
+              <!-- UPDATE: your real GitHub -->
+              <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+            </li>
+            <li>
+              <i data-feather="linkedin"></i>
+              <!-- UPDATE: your real LinkedIn -->
+              <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-wrap">
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" placeholder="Jane Doe" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" placeholder="jane@example.com" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea rows="5" placeholder="What's on your mind?" class="form-input"></textarea>
+          </div>
+          <button class="btn-primary full-width">
+            Send Message &nbsp;<i data-feather="send"></i>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+    FOOTER
+    UPDATE: Replace href values with your real links
+  ====================================================== -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; <span id="year"></span> Abdeljalil Medjadi</p>
+      <div class="footer-links">
+        <!-- UPDATE: your GitHub URL -->
+        <a href="https://github.com/antaru-1" target="_blank" class="social-icon" aria-label="GitHub">
+          <i data-feather="github"></i>
+        </a>
+        <!-- UPDATE: your LinkedIn URL -->
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <i data-feather="linkedin"></i>
+        </a>
+        <!-- UPDATE: your email -->
+        <a href="mailto:your@email.com" class="social-icon" aria-label="Email">
+          <i data-feather="mail"></i>
+        </a>
+        <!-- UPDATE: path to your CV PDF -->
+        <a href="assets/cv.pdf" download class="social-icon" aria-label="Download CV">
+          <i data-feather="download"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Your script -->
+  <script src="script.js"></script>
+
 </body>
 </html>
