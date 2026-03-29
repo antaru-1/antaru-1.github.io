@@ -405,22 +405,23 @@
           </ul>
         </div>
 
-        <div class="contact-form-wrap">
-          <div class="form-group">
-            <label class="form-label">Name</label>
-            <input type="text" placeholder="Jane Doe" class="form-input" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email</label>
-            <input type="email" placeholder="jane@example.com" class="form-input" />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea rows="5" placeholder="What's on your mind?" class="form-input"></textarea>
-          </div>
-          <button class="btn-primary full-width">
-            Send Message &nbsp;<i data-feather="send"></i>
-          </button>
+       <form action="https://formspree.io/f/mreopvqk" method="POST" class="contact-form-wrap">
+  <div class="form-group">
+    <label class="form-label">Name</label>
+    <input type="text" name="name" placeholder="Jane Doe" class="form-input" required />
+  </div>
+  <div class="form-group">
+    <label class="form-label">Email</label>
+    <input type="email" name="email" placeholder="jane@example.com" class="form-input" required />
+  </div>
+  <div class="form-group">
+    <label class="form-label">Message</label>
+    <textarea name="message" rows="5" placeholder="What's on your mind?" class="form-input" required></textarea>
+  </div>
+  <button type="submit" class="btn-primary full-width">
+    Send Message &nbsp;<i data-feather="send"></i>
+  </button>
+</form>
         </div>
 
       </div>
