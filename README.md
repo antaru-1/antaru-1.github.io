@@ -1,11 +1,8 @@
 # 🚀 Portfolio | Abdeljalil Medjadi
 
-<a href="https://antaru-1.github.io" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github" alt="GitHub Pages">
-</a>
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://antaru-1.github.io/)
 
-Check it out here: <a href="https://antaru-1.github.io" target="_blank" rel="noopener noreferrer">antaru-1.github.io</a>
-
+Check it out here: [🌐 anraru-1.github.io](https://antaru-1.github.io/)
 
 Welcome to the source code of my personal portfolio. This project serves as a dynamic digital archive of my journey as a Computer Science Student, capturing both my academic milestones and my self-taught technical explorations.
 
