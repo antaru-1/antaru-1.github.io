@@ -1,5 +1,8 @@
 # 🚀 Portfolio | Abdeljalil Medjadi
 
+![GitHub Pages](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)
+Check it out here: [aru-1.github.io](https://aru-1.github.io)
+
 Welcome to the source code of my personal portfolio. This project serves as a dynamic digital archive of my journey as a Computer Science Student, capturing both my academic milestones and my self-taught technical explorations.
 
 ## 📌 Vision & Purpose
